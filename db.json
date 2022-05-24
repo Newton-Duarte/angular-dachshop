@@ -1,0 +1,10 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "title": "Shampoo para cachorro",
+      "price": 599
+    }
+  ],
+  "pets": []
+}
