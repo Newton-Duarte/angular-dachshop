@@ -53,15 +53,7 @@ export class AuthService implements CanActivate {
     return this.http.get(this.url + 'refresh');
   }
 
-    const user = this.usersInMemory.find((user) => user.token === token);
-
-    if (!user) {
-      throw new Error('Usuário não existe');
-    }
-
-    this.user = user;
-    this.token = user.token;
-
-    localStorage.setItem('dachshop.token', user.token);
+  resetPassword(email: string) {
+    return this.http.get(this.url + 'reset-password');
   }
 }
