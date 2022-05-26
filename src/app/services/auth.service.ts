@@ -21,21 +21,7 @@ type AuthenticateData = {
   providedIn: 'root'
 })
 export class AuthService implements CanActivate {
-  public url = environment.BASE_URL + 'authenticate';
-
-  user!: User;
-  token!: string;
-  usersInMemory: User[] = [
-    {
-      id: 1, email: 'newton@dachshop.com', password: '111222', token: '123456789',
-    },
-    {
-      id: 2, email: 'john@dachshop.com', password: '333444', token: '123456789',
-    },
-    {
-      id: 3, email: 'jane@dachshop.com', password: '555666', token: '123456789',
-    }
-  ]
+  public url = environment.BASE_URL;
 
   constructor(private http: HttpClient, private router: Router) { }
 
