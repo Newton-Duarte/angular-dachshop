@@ -12,6 +12,12 @@ type User = {
   token: string;
 };
 
+type CreateUserData = {
+  name: string;
+  email: string;
+  password: string;
+};
+
 type AuthenticateData = {
   email: string;
   password: string;
