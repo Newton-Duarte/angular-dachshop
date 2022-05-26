@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { AuthService } from 'src/app/services/auth.service';
 import { Security } from 'src/app/utils/security.util';
 import { CustomValidator } from 'src/app/validators/custom.validator';
@@ -12,9 +13,14 @@ import { CustomValidator } from 'src/app/validators/custom.validator';
 })
 export class LoginPageComponent implements OnInit {
   public form!: FormGroup;
-  public loading = true;
+  public loading = false;
 
-  constructor(private authService: AuthService, private formBuilder: FormBuilder, private router: Router) {
+  constructor(
+    private authService: AuthService,
+    private formBuilder: FormBuilder,
+    private router: Router,
+    private toastr: ToastrService
+  ) {
     this.form = this.formBuilder.group({
       email: ['', Validators.compose([
         CustomValidator.isEmail,
@@ -28,12 +34,27 @@ export class LoginPageComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    const token = Security.getToken();
-
-    if (token) {
+    if (Security.hasToken()) {
       this.loading = true;
-      // make request and use the setUser method to save user and token
-      this.loading = false;
+      this
+        .authService
+        .refreshToken()
+        .subscribe(
+          (data: any) => {
+            this.loading = false;
+            this.toastr.success('Bem-vindo', 'Sucesso!');
+            this.setUser(data.user, data.token);
+          },
+          (error) => {
+            Security.clear();
+            console.log(error);
+            this.toastr.error('Ocorreu um erro ao tentar fazer login', 'Erro!');
+            this.loading = false;
+          },
+          () => {
+            this.loading = false;
+          }
+        );
     }
   }
 
