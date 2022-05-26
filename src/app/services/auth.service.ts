@@ -5,13 +5,6 @@ import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Security } from '../utils/security.util';
 
-type User = {
-  id: number;
-  email: string;
-  password: string;
-  token: string;
-};
-
 type CreateUserData = {
   name: string;
   email: string;
@@ -48,12 +41,9 @@ export class AuthService implements CanActivate {
     return headers;
   }
 
-  authenticate(data: AuthenticateData) {
-    const user = this.usersInMemory.find((user) => user.email === data.email);
-
-    if (!user) {
-      throw new Error('Usuário ou senha inválidos');
-    }
+  create(data: CreateUserData) {
+    return this.http.post(this.url + 'accounts', data);
+  }
 
     this.user = user;
     this.token = user.token;
