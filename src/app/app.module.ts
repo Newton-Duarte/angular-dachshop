@@ -18,6 +18,7 @@ import { FramePageComponent } from './pages/frame-page/frame-page.component';
 import { ProductCardComponent } from './components/store/product-card/product-card.component';
 import { LoadingComponent } from './components/shared/loading/loading.component';
 import { MaskDirective } from './directives/mask.directive';
+import { ProfilePageComponent } from './pages/account/profile-page/profile-page.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { MaskDirective } from './directives/mask.directive';
     FramePageComponent,
     ProductCardComponent,
     LoadingComponent,
-    MaskDirective
+    MaskDirective,
+    ProfilePageComponent,
   ],
   imports: [
     BrowserModule,
