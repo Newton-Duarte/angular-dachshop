@@ -45,10 +45,8 @@ export class AuthService implements CanActivate {
     return this.http.post(this.url + 'accounts', data);
   }
 
-    this.user = user;
-    this.token = user.token;
-
-    localStorage.setItem('dachshop.token', user.token);
+  authenticate(data: AuthenticateData) {
+    return this.http.get(this.url + 'authenticate');
   }
 
   refreshToken() {
