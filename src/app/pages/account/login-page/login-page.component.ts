@@ -38,7 +38,20 @@ export class LoginPageComponent implements OnInit {
   }
 
   onSubmit(): void {
-    this.authService.authenticate(this.form.value);
+    this.loading = true;
+    this
+      .authService
+      .authenticate(this.form.value)
+      .subscribe(
+        (data: any) => {
+          this.setUser(data.user, data.token);
+          this.loading = false;
+        },
+        (error) => {
+          console.log(error);
+          this.loading = false;
+        }
+      );
   }
 
   setUser(user: any, token: any) {
