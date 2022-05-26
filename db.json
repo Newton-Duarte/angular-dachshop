@@ -1,10 +1,42 @@
 {
+  "accounts": [
+    {
+      "name": "Dachshop User",
+      "email": "dachshop@dachshop.com",
+      "id": 1
+    }
+  ],
   "products": [
     {
       "id": 1,
       "title": "Shampoo para cachorro",
-      "price": 599
+      "price": 599,
+      "image": "https://picsum.photos/200"
     }
   ],
+  "me": {
+    "id": 1,
+    "name": "Dachshop User",
+    "email": "dachshop@dachshop.com"
+  },
+  "authenticate": {
+    "user": {
+      "id": 1,
+      "name": "Dachshop User",
+      "email": "dachshop@dachshop.com"
+    },
+    "token": "123456789"
+  },
+  "refresh": {
+    "user": {
+      "id": 1,
+      "name": "Dachshop User",
+      "email": "dachshop@dachshop.com"
+    },
+    "token": "123456789"
+  },
+  "reset-password": {
+    "message": "Um e-mail foi enviado com as instruções para recuperar sua senha"
+  },
   "pets": []
 }
