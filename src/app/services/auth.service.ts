@@ -51,7 +51,7 @@ export class AuthService implements CanActivate {
   }
 
   public composeHeaders() {
-    const token = localStorage.getItem('dachshop.token');
+    const token = Security.getToken();
     const headers = new HttpHeaders().set('Authorization', `Bearer ${token as string}`);
     return headers;
   }
