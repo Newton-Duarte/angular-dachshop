@@ -50,11 +50,8 @@ export class AuthService implements CanActivate {
   }
 
   refreshToken() {
-    const token = localStorage.getItem('dachshop.token');
-
-    if (!token) {
-      throw new Error('Token inválido');
-    }
+    return this.http.get(this.url + 'refresh');
+  }
 
     const user = this.usersInMemory.find((user) => user.token === token);
 
