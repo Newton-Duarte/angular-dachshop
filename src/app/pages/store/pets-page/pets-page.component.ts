@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { Pet } from 'src/app/models/pet.model';
 import { PetService } from 'src/app/services/pet.service';
 
@@ -8,7 +9,8 @@ import { PetService } from 'src/app/services/pet.service';
   styleUrls: ['./pets-page.component.css']
 })
 export class PetsPageComponent implements OnInit {
-  pets: Pet[] = [];
+  public loading = false;
+  public pets$!: Observable<Pet[]>;
 
   constructor(private petsService: PetService) { }
 
@@ -17,10 +19,12 @@ export class PetsPageComponent implements OnInit {
   }
 
   loadPets() {
-    this.petsService.getPets().subscribe(
-      (data) => this.pets = data,
-      (error) => console.log(error),
-    )
+    this.loading = true;
+
+    setTimeout(() => {
+      this.pets$ = this.petsService.getPets();
+      this.loading = false;
+    }, 600);
   }
 
 }
