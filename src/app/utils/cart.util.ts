@@ -31,4 +31,10 @@ export class CartUtil {
   public static clear() {
     localStorage.removeItem(LOCAL_STORAGE_DACHSHOP_CART);
   }
+
+  public static getProductsQuantity() {
+    const cart = this.get();
+
+    return cart.items.reduce((total, item) => total += item.quantity, 0);
+  }
 }
