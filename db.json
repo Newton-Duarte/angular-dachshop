@@ -68,5 +68,24 @@
   "reset-password": {
     "message": "Um e-mail foi enviado com as instruções para recuperar sua senha"
   },
-  "pets": []
+  "pets": [
+    {
+      "id": 1,
+      "name": "Felicidade",
+      "description": "Linda pinscher de cor preta e marrom",
+      "image": "https://place-puppy.com/250x250"
+    },
+    {
+      "id": 2,
+      "name": "Princesa",
+      "description": "Linda pinscher",
+      "image": "https://place-puppy.com/251x251"
+    },
+    {
+      "id": 3,
+      "name": "Cherry",
+      "description": "Linda cachorrinha muito esperta",
+      "image": "https://place-puppy.com/252x252"
+    }
+  ]
 }
