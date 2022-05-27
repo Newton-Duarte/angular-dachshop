@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 import { CartItem } from 'src/app/models/cart-item.model';
 import { Cart } from 'src/app/models/cart.model';
 import { CartUtil } from 'src/app/utils/cart.util';
@@ -11,7 +12,7 @@ import { CartUtil } from 'src/app/utils/cart.util';
 export class CartPageComponent implements OnInit {
   public cart = new Cart();
 
-  constructor() { }
+  constructor(private toastr: ToastrService) { }
 
   ngOnInit(): void {
     this.loadCart();
@@ -34,6 +35,11 @@ export class CartPageComponent implements OnInit {
   public clear() {
     CartUtil.clear();
     this.loadCart();
+  }
+
+  public checkout() {
+    this.clear();
+    this.toastr.success('Pedido realizado com sucesso!', 'Sucesso');
   }
 
 }
