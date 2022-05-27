@@ -18,11 +18,7 @@ export class CartPageComponent implements OnInit {
   }
 
   public total() {
-    return this.cart.items.reduce((total, item) => {
-      total += ((item.price / 100) * item.quantity);
-
-      return total;
-    }, 0);
+    return this.cart.items.reduce((total, item) => total += ((item.price / 100) * item.quantity), 0);
   }
 
   public loadCart() {
