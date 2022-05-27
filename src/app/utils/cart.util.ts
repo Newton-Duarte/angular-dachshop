@@ -14,7 +14,7 @@ export class CartUtil {
     return JSON.parse(data);
   }
 
-  public static add(id: string, product: string, quantity: number, price: number, image: string) {
+  public static add(id: number, product: string, quantity: number, price: number, image: string) {
     const cart = this.get();
 
     const item = new CartItem(id, product, quantity, price, image);
