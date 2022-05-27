@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { User } from 'src/app/models/user.model';
+import { CartUtil } from 'src/app/utils/cart.util';
 import { Security } from 'src/app/utils/security.util';
 
 @Component({
@@ -15,6 +16,10 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit(): void {
     this.user = Security.getUser();
+  }
+
+  cartProductsQuantity() {
+    return CartUtil.getProductsQuantity();
   }
 
   logout() {
