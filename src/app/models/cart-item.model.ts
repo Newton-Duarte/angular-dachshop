@@ -1,6 +1,6 @@
 export class CartItem {
   constructor(
-    public id: string,
+    public id: number,
     public product: string,
     public quantity: number,
     public price: number,
