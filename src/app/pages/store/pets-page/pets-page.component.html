@@ -19,9 +19,12 @@
 </div>
 
 <div class="uk-container">
-  <div uk-grid>
-    <div class="uk-width-1-3" *ngFor="let pet of pets">
-      <app-pet-card [pet]="pet"></app-pet-card>
+  <app-loading *ngIf="loading else pets_list"></app-loading>
+  <ng-template #pets_list>
+    <div uk-grid>
+      <div class="uk-width-1-3" *ngFor="let pet of pets$ | async">
+        <app-pet-card [pet]="pet"></app-pet-card>
+      </div>
     </div>
-  </div>
+  </ng-template>
 </div>
