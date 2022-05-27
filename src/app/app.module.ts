@@ -19,6 +19,7 @@ import { ProductCardComponent } from './components/store/product-card/product-ca
 import { LoadingComponent } from './components/shared/loading/loading.component';
 import { MaskDirective } from './directives/mask.directive';
 import { ProfilePageComponent } from './pages/account/profile-page/profile-page.component';
+import { PetCardComponent } from './components/account/pet-card/pet-card.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { ProfilePageComponent } from './pages/account/profile-page/profile-page.
     LoadingComponent,
     MaskDirective,
     ProfilePageComponent,
+    PetCardComponent,
   ],
   imports: [
     BrowserModule,
