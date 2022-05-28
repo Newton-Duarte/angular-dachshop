@@ -1,0 +1,24 @@
+<app-loading *ngIf="loading else pet_form"></app-loading>
+
+<ng-template #pet_form>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="uk-card uk-card-primary uk-card-body uk-box-shadow-small">
+      <div class="uk-margin">
+        <input type="text" class="uk-input uk-form-large"
+          [ngClass]="{ 'uk-form-danger': (form.controls['name'].invalid && !form.controls['name'].pristine) }"
+          placeholder="Nome" formControlName="name">
+      </div>
+      <div class="uk-margin">
+        <textarea class="uk-textarea uk-form-large"
+          [ngClass]="{ 'uk-form-danger': (form.controls['description'].invalid && !form.controls['description'].pristine) }"
+          name="pet_description" id="pet_description" cols="30" rows="10" placeholder="Descrição"
+          formControlName="description"></textarea>
+      </div>
+      <div class="uk-margin uk-width-1-1">
+        <button type="submit" class="uk-button uk-width-1-1 uk-button-default" [disabled]="form.invalid">
+          Adicionar
+        </button>
+      </div>
+    </div>
+  </form>
+</ng-template>
