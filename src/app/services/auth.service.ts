@@ -73,7 +73,7 @@ export class AuthService implements CanActivate {
 
     return new Observable((observer) => {
       setTimeout(() => observer.next('Cadastro realizado com sucesso!'), 400);
-    })
+    });
   }
 
   authenticate(data: AuthenticateData): Observable<AuthData> {
