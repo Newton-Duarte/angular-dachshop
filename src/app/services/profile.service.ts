@@ -14,7 +14,7 @@ export class ProfileService {
     return this.authService.getCurrentUser();
   }
 
-  updateProfile(userData: UserData) {
-    return this.http.put(this.url + 'accounts/1', userData);
+  updateProfile(name: string, email: string) {
+    return this.authService.updateUserProfile(name, email);
   }
 }
