@@ -136,7 +136,7 @@ export class AuthService implements CanActivate {
     return this.users.find((user) => user.id === id);
   }
 
-  resetPassword(email: string) {
-    return this.http.get(this.url + 'reset-password');
+  getUserByEmail(email: string) {
+    return this.users.find((user) => user.email === email);
   }
 }
