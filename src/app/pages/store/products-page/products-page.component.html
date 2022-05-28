@@ -1,3 +1,13 @@
+<div class="uk-container" [ngStyle]="{ 'margin-top': '31px', 'margin-bottom': '28px' }">
+  <nav class="uk-navbar-container" uk-navbar>
+    <div class="uk-navbar-left">
+      <ul class="uk-navbar-nav">
+        <li class="uk-active">Produtos</li>
+      </ul>
+    </div>
+  </nav>
+</div>
+
 <div class="uk-container">
   <app-loading *ngIf="loading else products_list"></app-loading>
   <ng-template #products_list>
