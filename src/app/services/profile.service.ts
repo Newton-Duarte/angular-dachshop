@@ -1,11 +1,6 @@
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
-
-type UserData = {
-  id: number;
-  name: string;
-  email: string;
-}
+import { AuthService } from './auth.service';
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +11,7 @@ export class ProfileService {
   constructor(private authService: AuthService) { }
 
   getProfile() {
-    return this.http.get(this.url + 'accounts/1');
+    return this.authService.getCurrentUser();
   }
 
   updateProfile(userData: UserData) {
