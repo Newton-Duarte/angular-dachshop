@@ -35,7 +35,16 @@ export class AuthService implements CanActivate {
     }
   ];
 
-  constructor(private http: HttpClient, private router: Router) { }
+  authData = {
+    user: {
+      id: 1,
+      name: "Dachshop User",
+      email: "dachshop@dachshop.com"
+    },
+    token: "123456789"
+  };
+
+  constructor(private router: Router) { }
 
   canActivate() {
     const token = Security.getToken();
