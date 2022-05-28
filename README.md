@@ -12,32 +12,32 @@ https://newton-dachshop.vercel.app/
 
 #### Pets Page
 ---
-![Angular Todo 01](/screenshots/screen01.jpg)
+![Angular Todo 01](/screenshots/dachshop-01.jpg)
 
 #### Add New Pet
 ---
-![Angular Todo 02](/screenshots/screen02.jpg)
+![Angular Todo 02](/screenshots/dachshop-02.jpg)
 
 #### Products Page
 ---
-![Angular Todo 03](/screenshots/screen03.jpg)
+![Angular Todo 03](/screenshots/dachshop-03.jpg)
 
 #### Cart Page
 ---
-![Angular Todo 04](/screenshots/screen04.jpg)
+![Angular Todo 04](/screenshots/dachshop-04.jpg)
 
 #### Profile Page
 ---
-![Angular Todo 05](/screenshots/screen05.jpg)
+![Angular Todo 05](/screenshots/dachshop-05.jpg)
 
 #### Login Page
 ---
-![Angular Todo 06](/screenshots/screen06.jpg)
+![Angular Todo 06](/screenshots/dachshop-06.jpg)
 
 #### Sign Up Page
 ---
-![Angular Todo 07](/screenshots/screen07.jpg)
+![Angular Todo 07](/screenshots/dachshop-07.jpg)
 
 #### Reset Password Page
 ---
-![Angular Todo 08](/screenshots/screen08.jpg)
+![Angular Todo 08](/screenshots/dachshop-08.jpg)
