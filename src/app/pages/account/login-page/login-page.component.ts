@@ -66,10 +66,12 @@ export class LoginPageComponent implements OnInit {
       .subscribe(
         (data: any) => {
           this.setUser(data.user, data.token);
+          this.toastr.success(`Bem-vindo ${data?.user?.name}`, 'Sucesso!');
           this.loading = false;
         },
         (error) => {
           console.log(error);
+          this.toastr.error(error, 'Erro!');
           this.loading = false;
         }
       );
