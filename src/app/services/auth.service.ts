@@ -16,6 +16,11 @@ type AuthenticateData = {
   password: string;
 };
 
+type AuthData = {
+  user: User;
+  token: string;
+}
+
 @Injectable({
   providedIn: 'root'
 })
