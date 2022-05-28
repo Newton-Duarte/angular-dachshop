@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { ProfileService } from 'src/app/services/profile.service';
+import { Security } from 'src/app/utils/security.util';
 import { CustomValidator } from 'src/app/validators/custom.validator';
 
 @Component({
@@ -51,12 +52,15 @@ export class ProfilePageComponent implements OnInit {
 
   onSubmit() {
     this.loading = true;
+    const { name, email } = this.form.value;
+
     this
       .profileService
-      .updateProfile(this.form.value)
+      .updateProfile(name, email)
       .subscribe(
-        (data: any) => {
+        (user) => {
           this.toastr.success('Perfil atualizado com sucesso', 'Sucesso');
+          Security.setUser(user);
           this.loading = false;
         },
         (error) => {
