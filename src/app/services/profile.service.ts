@@ -1,4 +1,3 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 
@@ -14,7 +13,7 @@ type UserData = {
 export class ProfileService {
   public url = environment.BASE_URL;
 
-  constructor(private http: HttpClient) { }
+  constructor(private authService: AuthService) { }
 
   getProfile() {
     return this.http.get(this.url + 'accounts/1');
