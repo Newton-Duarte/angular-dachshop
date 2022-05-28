@@ -132,8 +132,8 @@ export class AuthService implements CanActivate {
     })
   }
 
-  refreshToken() {
-    return this.http.get(this.url + 'refresh');
+  getUserById(id: number) {
+    return this.users.find((user) => user.id === id);
   }
 
   resetPassword(email: string) {
