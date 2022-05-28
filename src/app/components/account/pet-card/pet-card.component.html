@@ -5,9 +5,12 @@
   <div class="uk-card-body">
     <h3 class="uk-card-title">{{ pet.name }}</h3>
     <p>{{ pet.description }}</p>
-    <button class="uk-button uk-button-default uk-width-1-1" (click)="editPet()">
-      <span class="uk-icon uk-margin-small-right" uk-icon="icon: pencil"></span>
-      Editar
-    </button>
+    <app-loading *ngIf="loading else btn_remove"></app-loading>
+    <ng-template #btn_remove>
+      <button class="uk-button uk-button-default uk-width-1-1" (click)="removePet()">
+        <span class="uk-icon uk-margin-small-right" uk-icon="icon: trash"></span>
+        Remover
+      </button>
+    </ng-template>
   </div>
 </div>
