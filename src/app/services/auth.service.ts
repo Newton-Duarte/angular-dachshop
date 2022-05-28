@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot, UrlTree } from '@angular/router';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import { User } from '../models/user.model';
 import { Security } from '../utils/security.util';
 
 type CreateUserData = {
@@ -26,6 +27,13 @@ type AuthData = {
 })
 export class AuthService implements CanActivate {
   public url = environment.BASE_URL;
+  users: User[] = [
+    {
+      id: 1,
+      name: "Dachshop User",
+      email: "dachshop@dachshop.com",
+    }
+  ];
 
   constructor(private http: HttpClient, private router: Router) { }
 
