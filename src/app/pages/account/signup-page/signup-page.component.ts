@@ -47,9 +47,9 @@ export class SignupPageComponent implements OnInit {
       .authService
       .create(this.form.value)
       .subscribe(
-        (data: any) => {
+        (message: any) => {
           this.loading = false;
-          this.toastr.success('Cadastro realizado com sucesso!', 'Sucesso!');
+          this.toastr.success(message, 'Sucesso!');
           this.router.navigate(['/login']);
         },
         (error) => {
