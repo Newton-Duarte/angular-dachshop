@@ -126,8 +126,10 @@ export class AuthService implements CanActivate {
     })
   }
 
-  authenticate(data: AuthenticateData) {
-    return this.http.get(this.url + 'authenticate');
+  getCurrentUser() {
+    return new Observable((observer) => {
+      setTimeout(() => observer.next({ ...this.authData.user }), 400);
+    })
   }
 
   refreshToken() {
