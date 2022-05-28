@@ -14,8 +14,6 @@ type PetData = {
   providedIn: 'root'
 })
 export class PetService {
-  url = environment.BASE_URL + 'pets';
-
   pets: Pet[] = [
     {
       id: 1,

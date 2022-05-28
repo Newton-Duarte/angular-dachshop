@@ -26,7 +26,6 @@ type AuthData = {
   providedIn: 'root'
 })
 export class AuthService implements CanActivate {
-  public url = environment.BASE_URL;
   users: User[] = [
     {
       id: 1,

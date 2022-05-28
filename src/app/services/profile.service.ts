@@ -6,8 +6,6 @@ import { AuthService } from './auth.service';
   providedIn: 'root'
 })
 export class ProfileService {
-  public url = environment.BASE_URL;
-
   constructor(private authService: AuthService) { }
 
   getProfile() {
