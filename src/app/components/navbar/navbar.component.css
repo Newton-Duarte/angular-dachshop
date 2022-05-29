@@ -1,0 +1,9 @@
+@media (max-width: 767px) {
+  .uk-navbar-left {
+    flex-wrap: nowrap;
+  }
+
+  .uk-navbar-container {
+    flex-direction: column;
+  }
+}
